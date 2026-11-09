@@ -1,16 +1,12 @@
-VIRA · sitio web (HTML estático)
+VIRA · sitio web de vira.com.uy (HTML estático)
 
-Contenido:
-  index.html   La web completa en un solo archivo.
-  og.png       Imagen que se ve al compartir el link (WhatsApp, Instagram, etc.).
-  .nojekyll    Le avisa a GitHub Pages que no procese el sitio: se publica tal cual.
+Archivos (todos van sueltos en la raíz del repositorio):
+  index.html    La web completa en un solo archivo.
+  og.png        Imagen que se ve al compartir el link.
+  404.html      Página que se muestra si alguien entra a una dirección que no existe.
+  robots.txt    Indicaciones para buscadores.
+  sitemap.xml   Mapa del sitio para buscadores.
+  .nojekyll     Le avisa a GitHub Pages que publique los archivos tal cual.
 
-Para publicarlo con GitHub Pages:
-  1. Crear un repositorio público en GitHub (por ejemplo, "vira-sitio").
-  2. Subir estos archivos a la raíz del repositorio.
-  3. Settings > Pages > Source: "Deploy from a branch" > rama main > carpeta / (root).
-  4. En "Custom domain" escribir el dominio y guardar.
-  5. Cargar los registros DNS en el registrador del dominio (ver la guía en el chat).
-  6. Cuando el check de DNS pase, marcar "Enforce HTTPS".
-
-Contacto: se carga en la constante CONTACTO, al inicio del <script> de index.html.
+Contacto: se carga en la constante CONTACTO, al inicio del <script> grande de index.html.
+Dominio: vira.com.uy (ya está puesto en el enlace canónico, la imagen para compartir y el sitemap).
