@@ -136,10 +136,10 @@ Se exploraron 11 estilos alrededor del logo. Rol de cada uno en el sistema:
 Se configura en la constante `CONTACTO`, al principio del `<script>` principal de `index.html`:
 
 ```js
-const CONTACTO = { whatsapp: '', email: 'vira.uruguay@gmail.com', instagram: 'vira.uruguay' };
+const CONTACTO = { whatsapp: '598XXXXXXXX', email: 'vira.uruguay@gmail.com', instagram: 'vira.uruguay' };
 ```
 
-- `whatsapp`: solo números, con código de país, por ejemplo `598XXXXXXXX`. **Todavía vacío.**
+- `whatsapp`: solo números, con código de país y sin el 0 inicial del celular, por ejemplo `598XXXXXXXX`. **Cargado: es el contacto principal.** En la lista de contacto se muestra solo como "WhatsApp", sin el número escrito; el número está en los datos para buscadores (`telephone`).
 - El formulario usa WhatsApp si existe; si no, el mail; si no, Instagram.
 - Los íconos de contacto (mail, Instagram, WhatsApp) aparecen solos según lo que esté cargado.
 
@@ -159,13 +159,13 @@ const CONTACTO = { whatsapp: '', email: 'vira.uruguay@gmail.com', instagram: 'vi
 - **Web:** https://vira.com.uy
 - **Instagram:** [@vira.uruguay](https://instagram.com/vira.uruguay)
 - **Mail:** vira.uruguay@gmail.com
-- **WhatsApp Business:** número propio de VIRA, todavía no cargado en la web.
+- **WhatsApp Business:** número propio de VIRA, cargado en la web como contacto principal.
 
 ---
 
 ## 5. Pendientes
 
-- [ ] Cargar el número de WhatsApp en `CONTACTO`.
+- [x] Cargar el número de WhatsApp en `CONTACTO`.
 - [ ] Fotos reales de los socios para la sección Nosotros (hoy muestra iniciales).
 - [ ] Decidir si se mantiene la frase "No es para…" en la sección Para quién.
 - [ ] Sección de preguntas frecuentes (precios, tiempos, qué incluye cada servicio), cuando estén definidos.

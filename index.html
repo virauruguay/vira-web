@@ -23,7 +23,7 @@
 <meta name="twitter:title" content="VIRA · Publicidad con otra vuelta">
 <meta name="twitter:description" content="Marca, anuncios pagos y sitios web para cualquier tipo de negocio en Uruguay, en un mismo equipo.">
 <meta name="format-detection" content="telephone=no">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"VIRA","url":"https://vira.com.uy/","slogan":"Publicidad con otra vuelta","description":"Marca, anuncios pagos y sitios web para cualquier tipo de negocio, en un mismo equipo.","areaServed":"Uruguay","email":"vira.uruguay@gmail.com","sameAs":["https://www.instagram.com/vira.uruguay/"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"VIRA","url":"https://vira.com.uy/","telephone":"+598 99 002 974","slogan":"Publicidad con otra vuelta","description":"Marca, anuncios pagos y sitios web para cualquier tipo de negocio, en un mismo equipo.","areaServed":"Uruguay","email":"vira.uruguay@gmail.com","sameAs":["https://www.instagram.com/vira.uruguay/"]}</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -625,6 +625,14 @@ body.paused *, body.paused *::before, body.paused *::after { animation-play-stat
 @media (max-width: 760px) { .liquid { width: 100%; } }
 /* Botón de pausa sólido (sin desenfoque propio) */
 .mvbtn, .mvbtn:not(.on-light) { background: rgba(11,11,15,.9); -webkit-backdrop-filter: none; backdrop-filter: none; }
+/* Pausa: círculo de 44 px abajo a la derecha, lejos de los botones del inicio */
+.mvbtn, .mvbtn:not(.on-light) { left: auto; right: max(16px, env(safe-area-inset-right, 0px)); width: 44px; padding: 0; justify-content: center; }
+.mvbtn .txt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+/* En el celular, con el CTA fijo a la vista, el "Hablemos" de la barra se esconde para no repetirse */
+#nav .btn--accent { transition: opacity 200ms ease, transform 160ms var(--ease-out); }
+@media (max-width: 760px) { body.cta-fija #nav .btn--accent { opacity: 0; pointer-events: none; } }
+/* Cómo trabajamos en el celular: el wireframe va detrás del panel, no de los títulos */
+@media (max-width: 760px) { .como .wire { top: auto; bottom: 2%; height: 30%; opacity: .45; } }
 /* Texto más nítido */
 html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
 img { image-rendering: auto; }
@@ -999,7 +1007,7 @@ img { image-rendering: auto; }
   /* ── Contacto: completar acá y listo ─────────────────────────────
      whatsapp: solo números con código de país, ej. "59899123456"
      email: ej. "hola@vira.uy"      instagram: sin @, ej. "vira.uy"   */
-  const CONTACTO = { whatsapp: '', email: 'vira.uruguay@gmail.com', instagram: 'vira.uruguay' };
+  const CONTACTO = { whatsapp: '59899002974', email: 'vira.uruguay@gmail.com', instagram: 'vira.uruguay' };
 
   document.documentElement.classList.add('js');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1035,7 +1043,7 @@ img { image-rendering: auto; }
   // Contacto real, si está cargado
   const waBase = CONTACTO.whatsapp ? 'https://wa.me/' + CONTACTO.whatsapp : '';
   document.querySelectorAll('[data-cta]').forEach((a) => {
-    if (waBase && a.id === 'stickyCta') { a.href = waBase + '?text=' + encodeURIComponent('Hola VIRA, quiero hablar de mi negocio.'); a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Hablemos por WhatsApp'; }
+    if (waBase) { a.href = waBase + '?text=' + encodeURIComponent('Hola VIRA, quiero hablar de mi negocio.'); a.target = '_blank'; a.rel = 'noopener'; if (a.id === 'stickyCta') a.textContent = 'Hablemos por WhatsApp'; }
   });
   const contacts = document.getElementById('contacts');
   const addContact = (label, href) => { const li = document.createElement('li'); const a = document.createElement('a'); a.href = href; a.textContent = label; if (href.startsWith('http')) { a.target = '_blank'; a.rel = 'noopener'; } li.appendChild(a); contacts.appendChild(li); };
@@ -1067,6 +1075,7 @@ img { image-rendering: auto; }
     const r = closingEl.getBoundingClientRect();
     const inClosing = r.top < innerHeight * 0.6;
     sticky.classList.toggle('is-on', pastHero && !inClosing);
+    document.body.classList.toggle('cta-fija', pastHero && !inClosing);
   };
   addEventListener('scroll', onScrollCta, { passive: true }); onScrollCta();
 
@@ -1340,7 +1349,8 @@ img { image-rendering: auto; }
     fieldInit(); fieldLayout();
     var rt; addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { all(); fieldLayout(); if (RM) { if (LQ.gl) liqDraw(); if (WR.gl) wireDraw(); } else { wireKick(); } }, 180); });
   };
-  IM.src = SYM;
+  // Los efectos pesados arrancan después de que entra el título, para no frenarlo
+  setTimeout(function () { IM.src = SYM; }, RM ? 0 : 450);
 })();
 </script>
 
