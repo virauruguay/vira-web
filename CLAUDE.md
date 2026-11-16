@@ -106,7 +106,7 @@ Se exploraron 11 estilos alrededor del logo. Rol de cada uno en el sistema:
 - **URL:** https://vira.com.uy
 - **Hosting:** GitHub Pages, desde este repositorio (`virauruguay/vira-web`), rama `main`, carpeta raíz.
 - **Dominio:** `vira.com.uy`, registrado en nic.com.uy. DNS con registros A (`@` y `www`) hacia las IPs de GitHub Pages: 185.199.108.153, 185.199.109.153, 185.199.110.153 y 185.199.111.153.
-- **Publicar un cambio:** commit y push a `main`. En 1 o 2 minutos se actualiza (ver la pestaña Actions: "pages build and deployment").
+- **Publicar un cambio:** se trabaja en una rama aparte y se abre un pedido de cambios (*pull request*). Se publica cuando el pedido se junta en `main`: en 1 o 2 minutos se actualiza (ver la pestaña Actions: "pages build and deployment"). GitHub no deja subir directo a `main`.
 
 ### Archivos
 | Archivo | Qué es |
@@ -151,6 +151,21 @@ const CONTACTO = { whatsapp: '598XXXXXXXX', email: 'vira.uruguay@gmail.com', ins
 5. Probar en celular (unos 390 px de ancho) y en escritorio.
 6. No borrar las etiquetas `meta` de compartir, el enlace canónico, ni `CNAME`.
 7. Mensajes de commit claros, en español.
+
+---
+
+## Cómo trabajamos de a dos
+
+Nicolás y Román trabajan cada uno con su propio Claude sobre `vira-web` (este repositorio) y `vira` (el proyecto de marca, privado). Estas reglas valen en los dos repositorios.
+
+- **Antes de empezar cualquier tarea:** `git pull` en `vira` y en `vira-web`. Puede que el otro socio haya subido algo.
+- **Al terminar:** commit y push con un mensaje claro en español. Nunca dejar trabajo sin subir.
+- **Conflictos de Git:** Claude no elige. Muestra las dos versiones y decide la persona.
+- **vira-web:** los cambios van siempre en una rama aparte, con un pedido de cambios (*pull request*) para que el otro socio lo vea. Se publica cuando el pedido se junta en `main`. GitHub no deja subir directo a `main`, pero no exige aprobación (decisión del 16/11/2026). Nunca borrar `CNAME`. Nunca subir teléfonos, direcciones, datos de clientes, precios internos ni contraseñas: el repositorio es público.
+- **Metricool e Instagram:** no programar ni publicar nada sin mostrar antes qué sale, cuándo y con qué texto. Antes de programar, revisar lo que ya está programado para no duplicar ni pisar lo del otro.
+- **Todo se publica por Metricool**, no directo en Instagram.
+- **Nada de datos, resultados ni testimonios inventados.** Si falta un dato, va un marcador como `[RESULTADO REAL DEL CLIENTE]`.
+- **Las decisiones importantes se escriben en el repositorio** (`CLAUDE.md`, `BRAND.md` o `DESIGN.md` de `vira`), no solo en el chat: cada socio no ve las conversaciones del otro.
 
 ---
 
