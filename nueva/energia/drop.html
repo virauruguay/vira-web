@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>VIRA · Energía: Drop</title>
+<link rel="icon" href="../marca/simbolo-azul.svg">
+<style>
+@font-face{font-family:Figtree;font-weight:400;font-display:swap;src:url(../fuentes/figtree-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Figtree;font-weight:800;font-display:swap;src:url(../fuentes/figtree-latin-800-normal.woff2) format("woff2")}
+:root{--azul:#2E43E0;--azul-p:#2536C2;--mandarina:#FF7A3D;--negro:#0B0B0F;--niebla:#EEF0FA;--resorte:cubic-bezier(.34,1.56,.64,1);--ease:cubic-bezier(.23,1,.32,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Figtree,system-ui,sans-serif;background:var(--azul);color:#fff;overflow-x:hidden}
+::selection{background:var(--negro);color:#fff}
+:focus-visible{outline:3px solid #fff;outline-offset:4px}
+
+.portada{position:relative;min-height:100vh;overflow:hidden;padding:28px 48px 64px}
+.cab{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:5}
+.cab img{height:30px}
+.cab nav{display:flex;gap:28px;font-size:17px}
+.cab nav a{color:#fff;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;border-bottom:3px solid transparent;transition:border-color .15s}
+.cab nav a:hover{border-color:#fff}
+
+/* Título: pesado, inclinado, con sombra dura negra */
+h1{position:relative;z-index:3;margin-top:5vh;font-weight:800;font-size:11.2vw;line-height:.86;letter-spacing:-.045em;text-transform:uppercase;transform:skewX(-9deg);transform-origin:left bottom}
+h1 .l{display:block;text-shadow:.06em .06em 0 var(--negro)}
+h1 .l span{display:inline-block;opacity:0;transform:translateY(60%) scale(.9);animation:cae .55s var(--resorte) forwards}
+h1 .l:nth-child(2) span{animation-delay:.12s}
+h1 .l:nth-child(3) span{animation-delay:.24s}
+h1 .giro{color:var(--negro);text-shadow:.06em .06em 0 #fff}
+@keyframes cae{to{opacity:1;transform:none}}
+
+/* Cinta: un renglón negro que cruza la portada */
+.cinta{position:absolute;left:-5vw;right:-5vw;z-index:2;background:var(--negro);color:#fff;font-weight:800;font-size:28px;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;overflow:hidden;padding:14px 0;border-top:3px solid #fff;border-bottom:3px solid #fff}
+.cinta.a{top:62vh;transform:rotate(-4deg)}
+.cinta.b{top:70vh;transform:rotate(3deg);background:#fff;color:var(--azul);border-color:var(--negro)}
+.cinta .pista{display:inline-block;animation:corre 22s linear infinite}
+.cinta.b .pista{animation-direction:reverse;animation-duration:28s}
+.cinta i{font-style:normal;display:inline-block;margin:0 28px}
+@keyframes corre{to{transform:translateX(-50%)}}
+
+/* Stickers: etiquetas troqueladas que saltan al pasar */
+.sticker{position:absolute;z-index:4;display:inline-block;font-weight:800;text-transform:uppercase;padding:14px 22px;border:4px solid var(--negro);border-radius:14px;box-shadow:6px 6px 0 var(--negro);cursor:grab;user-select:none;transition:transform .35s var(--resorte),box-shadow .2s;touch-action:none}
+.sticker:hover{transform:rotate(var(--r)) scale(1.12) translateY(-6px);box-shadow:10px 12px 0 var(--negro)}
+.sticker.blanco{background:#fff;color:var(--azul)}
+.sticker.negro{background:var(--negro);color:#fff;border-color:#fff;box-shadow:6px 6px 0 #fff}
+.sticker.naranja{background:var(--mandarina);color:var(--negro)}
+.s1{--r:-8deg;transform:rotate(var(--r));top:19vh;right:9vw;font-size:30px}
+.s2{--r:6deg;transform:rotate(var(--r));top:38vh;right:22vw;font-size:24px}
+.s3{--r:-3deg;transform:rotate(var(--r));top:50vh;right:4vw;font-size:22px;text-transform:none}
+.sticker.pegado{animation:pega .5s var(--resorte)}
+@keyframes pega{0%{transform:rotate(var(--r)) scale(1.4)}100%{transform:rotate(var(--r)) scale(1)}}
+
+.abajo{position:absolute;left:48px;right:48px;bottom:48px;z-index:4;display:flex;justify-content:space-between;align-items:flex-end;gap:32px}
+.abajo p{font-size:21px;line-height:1.4;max-width:30ch;background:var(--azul);padding:4px 0}
+.wa{display:inline-flex;align-items:center;min-height:62px;padding:0 34px;background:var(--mandarina);color:var(--negro);font-weight:800;font-size:20px;text-decoration:none;border:4px solid var(--negro);border-radius:999px;box-shadow:7px 7px 0 var(--negro);transition:transform .12s var(--ease),box-shadow .12s var(--ease)}
+.wa:hover{transform:translate(-2px,-2px);box-shadow:10px 10px 0 var(--negro)}
+.wa:active{transform:translate(6px,6px);box-shadow:1px 1px 0 var(--negro)}
+
+/* El símbolo, entero, sin sombra ni giro */
+.simbolo{position:absolute;right:-6vw;bottom:-12vh;width:44vw;z-index:1;opacity:1}
+
+@media (max-width:760px){
+  .portada{padding:18px 20px 40px;min-height:100svh}
+  .cab nav a:not(:last-child){display:none}
+  h1{font-size:17.6vw;margin-top:4vh}
+  .cinta{font-size:19px;padding:10px 0}
+  .cinta.a{top:auto;bottom:250px}
+  .cinta.b{top:auto;bottom:205px}
+  .s1{top:auto;bottom:350px;right:18px;font-size:20px}
+  .s2{top:auto;bottom:308px;right:auto;left:16px;font-size:16px}
+  .s3{display:none}
+  .abajo{display:block;left:20px;right:20px;bottom:28px}
+  .abajo p{font-size:18px;margin-bottom:16px}
+  .wa{width:100%;justify-content:center}
+  .simbolo{width:92vw;right:-34vw;bottom:auto;top:30vh}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}h1 .l span{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="portada">
+  <div class="cab">
+    <img src="../marca/lockup-blanco.svg" alt="VIRA">
+    <nav><a href="#">Trabajo</a><a href="#">Cómo trabajamos</a><a href="#">Hablemos</a></nav>
+  </div>
+  <img class="simbolo" src="../marca/simbolo-blanco.svg" alt="" style="opacity:.14">
+  <h1 aria-label="Publicidad con otra vuelta"><span class="l"><span>Publicidad</span></span><span class="l"><span>con otra</span></span><span class="l giro"><span>vuelta.</span></span></h1>
+  <div class="cinta a" aria-hidden="true"><div class="pista"><i>Marca</i><i>Anuncios</i><i>Sitios web</i><i>Marca</i><i>Anuncios</i><i>Sitios web</i><i>Marca</i><i>Anuncios</i><i>Sitios web</i><i>Marca</i><i>Anuncios</i><i>Sitios web</i></div></div>
+  <div class="cinta b" aria-hidden="true"><div class="pista"><i>Te contestamos nosotros dos</i><i>Nicolás y Román</i><i>Te contestamos nosotros dos</i><i>Nicolás y Román</i><i>Te contestamos nosotros dos</i><i>Nicolás y Román</i></div></div>
+  <span class="sticker blanco s1">Todo negocio sirve</span>
+  <span class="sticker negro s2">Hecho a mano</span>
+  <span class="sticker blanco s3">Lo último: la tienda de Ferrotech</span>
+  <div class="abajo">
+    <p>Marca, anuncios y web para negocios chicos de Uruguay. Arrastrá los stickers si querés: están para eso.</p>
+    <a class="wa" href="#">Escribinos por WhatsApp</a>
+  </div>
+</header>
+<script>
+// Stickers arrastrables: se levantan, se mueven y se vuelven a pegar con un rebote
+document.querySelectorAll('.sticker').forEach((s) => {
+  let x0, y0, dx = 0, dy = 0;
+  s.addEventListener('pointerdown', (e) => {
+    s.setPointerCapture(e.pointerId); x0 = e.clientX - dx; y0 = e.clientY - dy; s.style.cursor = 'grabbing'; s.style.transition = 'none'; s.style.zIndex = 9;
+    const mover = (ev) => { dx = ev.clientX - x0; dy = ev.clientY - y0; s.style.translate = `${dx}px ${dy}px`; };
+    const soltar = () => { s.removeEventListener('pointermove', mover); s.style.cursor = ''; s.style.transition = ''; s.classList.remove('pegado'); void s.offsetWidth; s.classList.add('pegado'); };
+    s.addEventListener('pointermove', mover); s.addEventListener('pointerup', soltar, { once: true });
+  });
+});
+</script>
+</body>
+</html>

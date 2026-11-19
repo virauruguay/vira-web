@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>VIRA · Energía: Juguete</title>
+<link rel="icon" href="../marca/simbolo-azul.svg">
+<style>
+@font-face{font-family:Figtree;font-weight:400;font-display:swap;src:url(../fuentes/figtree-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Figtree;font-weight:800;font-display:swap;src:url(../fuentes/figtree-latin-800-normal.woff2) format("woff2")}
+:root{--azul:#2E43E0;--mandarina:#FF7A3D;--negro:#0B0B0F;--niebla:#EEF0FA}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Figtree,system-ui,sans-serif;background:var(--niebla);color:var(--negro);overflow-x:hidden}
+::selection{background:var(--azul);color:#fff}
+.portada{position:relative;height:100vh;height:100svh;min-height:640px;overflow:hidden;touch-action:pan-y}
+.cab{display:flex;justify-content:space-between;align-items:center;padding:26px 48px;position:relative;z-index:6}
+.cab img{height:30px}
+.wa{display:inline-flex;align-items:center;min-height:56px;padding:0 30px;background:var(--mandarina);color:var(--negro);font-weight:800;font-size:18px;text-decoration:none;border-radius:999px;transition:transform .2s cubic-bezier(.34,1.56,.64,1)}
+.wa:hover{transform:scale(1.06)}
+.wa:active{transform:scale(.94)}
+h1{position:relative;z-index:1;padding:2vh 48px 0;font-weight:800;font-size:12.6vw;line-height:.84;letter-spacing:-.055em;pointer-events:none}
+h1 em{font-style:normal;color:var(--azul)}
+.bajada{position:relative;z-index:1;padding:28px 48px 0;font-size:21px;max-width:44ch;line-height:1.4;pointer-events:none}
+.pista{position:absolute;right:48px;top:96px;font-size:15px;color:#45454A;z-index:6}
+.cosa{position:absolute;left:0;top:0;z-index:4;cursor:grab;user-select:none;touch-action:none;will-change:transform}
+.cosa:active{cursor:grabbing}
+.cosa .in{display:block;font-weight:800;white-space:nowrap;transform:rotate(var(--r,0deg));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+.cosa:hover .in{transform:rotate(var(--r,0deg)) scale(1.08)}
+.palabra .in{padding:14px 26px;border-radius:999px;font-size:34px}
+.azul .in{background:var(--azul);color:#fff}
+.negro .in{background:var(--negro);color:#fff}
+.blanco .in{background:#fff;color:var(--azul)}
+.bloque .in{padding:20px 28px;border-radius:18px;font-size:46px;letter-spacing:-.03em}
+.sim .in{width:120px;height:98px;padding:0;background:url(../marca/simbolo-azul.svg) center/contain no-repeat;transform:none!important}
+.sim.blanco-s .in{background-image:url(../marca/simbolo-negro.svg)}
+@media (max-width:760px){
+  .cab{padding:18px 20px}.cab img{height:24px}
+  .cab .wa{display:none}
+  h1{font-size:19vw;padding:3vh 20px 0}
+  .bajada{font-size:17px;padding:20px 20px 0}
+  .pista{display:none}
+  .palabra .in{font-size:20px;padding:10px 18px}
+  .bloque .in{font-size:26px;padding:12px 18px;border-radius:12px}
+  .sim .in{width:70px;height:57px}
+  .wa-movil{display:flex!important}
+}
+.wa-movil{display:none;position:absolute;left:20px;right:20px;bottom:20px;z-index:7;justify-content:center}
+@media (prefers-reduced-motion:reduce){.cosa .in{transition:none}}
+</style>
+</head>
+<body>
+<header class="portada" id="mesa">
+  <div class="cab"><img src="../marca/lockup-negro.svg" alt="VIRA"><a class="wa" href="#">Escribinos por WhatsApp</a></div>
+  <p class="pista">Agarrá cualquier cosa y tirala.</p>
+  <h1>Publicidad<br>con otra <em>vuelta.</em></h1>
+  <p class="bajada">Marca, anuncios y web para negocios chicos de Uruguay. Te contestamos nosotros dos: Nicolás y Román.</p>
+  <a class="wa wa-movil" href="#">Escribinos por WhatsApp</a>
+</header>
+<script>
+(() => {
+  const mesa = document.getElementById('mesa');
+  const quieto = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const movil = innerWidth <= 760;
+  const cosas = [
+    ['palabra azul', 'Marca', -6], ['palabra negro', 'Anuncios', 5], ['palabra blanco', 'Sitios web', -3],
+    ['bloque azul', 'Ferrotech', 4], ['palabra negro', 'Todo negocio sirve', -2], ['palabra blanco', 'Hablemos', 7],
+    ['sim', '', 0], ['bloque negro', 'Nicolás', -5], ['bloque blanco', 'Román', 6], ['sim blanco-s', '', 0], ['palabra azul', 'Hecho en Uruguay', 3]
+  ];
+  const cuerpos = cosas.map(([cls, txt, r], i) => {
+    const el = document.createElement('div'); el.className = 'cosa ' + cls;
+    const inn = document.createElement('span'); inn.className = 'in'; inn.textContent = txt; inn.style.setProperty('--r', r + 'deg');
+    if (!txt) el.setAttribute('aria-hidden', 'true');
+    el.appendChild(inn); mesa.appendChild(el);
+    const W = mesa.clientWidth;
+    return { el, w: 0, h: 0, x: (W * .08) + ((i * 137) % (W * .8)), y: -200 - i * 90, vx: (Math.random() - .5) * 4, vy: 0, agarrado: false };
+  });
+  const medir = () => cuerpos.forEach((b) => { b.w = b.el.offsetWidth; b.h = b.el.offsetHeight; });
+  medir();
+  const G = .7, REBOTE = .35, ROCE = .985;
+  function paso() {
+    const W = mesa.clientWidth, H = mesa.clientHeight - (movil ? 86 : 0);
+    for (const b of cuerpos) {
+      if (b.agarrado) continue;
+      b.vy += G; b.vx *= ROCE; b.vy *= .995; b.x += b.vx; b.y += b.vy;
+      if (b.y + b.h > H) { b.y = H - b.h; b.vy *= -REBOTE; b.vx *= .9; if (Math.abs(b.vy) < 1) b.vy = 0; }
+      if (b.x < 0) { b.x = 0; b.vx *= -.6; }
+      if (b.x + b.w > W) { b.x = W - b.w; b.vx *= -.6; }
+    }
+    // choques entre cosas: se empujan por el lado más corto
+    for (let k = 0; k < 3; k++) for (let i = 0; i < cuerpos.length; i++) for (let j = i + 1; j < cuerpos.length; j++) {
+      const a = cuerpos[i], b = cuerpos[j];
+      const ox = Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x), oy = Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y);
+      if (ox <= 0 || oy <= 0) continue;
+      const pa = a.agarrado ? 0 : (b.agarrado ? 1 : .5), pb = 1 - pa;
+      if (ox < oy) { const s = a.x < b.x ? -1 : 1; a.x += s * ox * pa; b.x -= s * ox * pb; const v = (a.vx + b.vx) / 2; if (!a.agarrado) a.vx = v; if (!b.agarrado) b.vx = v; }
+      else { const s = a.y < b.y ? -1 : 1; a.y += s * oy * pa; b.y -= s * oy * pb; if (s < 0) { if (!a.agarrado) a.vy = Math.min(a.vy, 0) * REBOTE; } else { if (!b.agarrado) b.vy = Math.min(b.vy, 0) * REBOTE; } }
+    }
+    for (const b of cuerpos) b.el.style.transform = `translate(${b.x}px,${b.y}px)`;
+    requestAnimationFrame(paso);
+  }
+  if (quieto) {
+    // quieto: las cosas ya están apoyadas abajo, sin caer
+    const W = mesa.clientWidth, H = mesa.clientHeight; let x = 20, fila = 0;
+    cuerpos.forEach((b) => { if (x + b.w > W - 20) { x = 20; fila++; } b.x = x; b.y = H - (fila + 1) * 90; x += b.w + 12; b.el.style.transform = `translate(${b.x}px,${b.y}px)`; });
+  } else requestAnimationFrame(paso);
+  // agarrar y tirar
+  cuerpos.forEach((b) => {
+    b.el.addEventListener('pointerdown', (e) => {
+      e.preventDefault(); b.el.setPointerCapture(e.pointerId); b.agarrado = true; b.el.style.zIndex = 5;
+      const r = mesa.getBoundingClientRect(); const ox = e.clientX - r.left - b.x, oy = e.clientY - r.top - b.y; let lx = e.clientX, ly = e.clientY;
+      const mover = (ev) => { b.vx = (ev.clientX - lx) * .9; b.vy = (ev.clientY - ly) * .9; lx = ev.clientX; ly = ev.clientY; b.x = ev.clientX - r.left - ox; b.y = ev.clientY - r.top - oy; if (quieto) b.el.style.transform = `translate(${b.x}px,${b.y}px)`; };
+      const soltar = () => { b.agarrado = false; b.el.style.zIndex = 4; b.el.removeEventListener('pointermove', mover); };
+      b.el.addEventListener('pointermove', mover); b.el.addEventListener('pointerup', soltar, { once: true }); b.el.addEventListener('pointercancel', soltar, { once: true });
+    });
+  });
+  addEventListener('resize', medir);
+  window.__cuerpos = cuerpos;
+})();
+</script>
+</body>
+</html>
