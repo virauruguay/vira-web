@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>VIRA · Publicidad con otra vuelta</title>
+<meta name="description" content="Marca, anuncios pagos y sitios web para cualquier tipo de negocio en Uruguay, en un mismo equipo. Publicidad con otra vuelta.">
+<meta name="theme-color" content="#2E43E0">
+<link rel="canonical" href="https://vira.com.uy/">
+<meta property="og:url" content="https://vira.com.uy/">
+<meta property="og:image" content="https://vira.com.uy/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://vira.com.uy/og.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_UY">
+<meta property="og:site_name" content="VIRA">
+<meta property="og:title" content="VIRA · Publicidad con otra vuelta">
+<meta property="og:description" content="Marca, anuncios pagos y sitios web para cualquier tipo de negocio en Uruguay, en un mismo equipo.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VIRA · Publicidad con otra vuelta">
+<meta name="twitter:description" content="Marca, anuncios pagos y sitios web para cualquier tipo de negocio en Uruguay, en un mismo equipo.">
+<meta name="format-detection" content="telephone=no">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"VIRA","url":"https://vira.com.uy/","telephone":"+598 99 002 974","slogan":"Publicidad con otra vuelta","description":"Marca, anuncios pagos y sitios web para cualquier tipo de negocio, en un mismo equipo.","areaServed":"Uruguay","email":"vira.uruguay@gmail.com","sameAs":["https://www.instagram.com/vira.uruguay/"]}</script>
+<link rel="icon" type="image/svg+xml" href="marca/simbolo-azul.svg">
+<link rel="preload" href="fuentes/figtree-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Figtree;font-weight:400;font-display:swap;src:url(fuentes/figtree-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Figtree;font-weight:800;font-display:swap;src:url(fuentes/figtree-latin-800-normal.woff2) format("woff2")}
+:root{
+  --azul:#2E43E0;--azul-p:#2536C2;--mandarina:#FF7A3D;--negro:#0B0B0F;--niebla:#EEF0FA;--gris:#45454A;--linea:#D6D9E8;
+  --ease:cubic-bezier(.23,1,.32,1);--m:48px;--franja:17vw;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:400;color:var(--negro);background:#fff;font-size:18px;line-height:1.5;overflow-x:hidden;font-kerning:normal;text-rendering:optimizeLegibility}
+::selection{background:var(--azul);color:#fff}
+img,video{display:block;max-width:100%;height:auto}
+a{color:inherit}
+b,strong{font-weight:800}
+:focus-visible{outline:3px solid var(--azul);outline-offset:4px;border-radius:2px}
+.sobre-azul :focus-visible,.sobre-negro :focus-visible{outline-color:#fff}
+.oculto{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.saltar{position:absolute;left:var(--m);top:-80px;background:var(--negro);color:#fff;padding:12px 18px;z-index:20;text-decoration:none}
+.saltar:focus{top:12px}
+
+/* Enlaces de texto: el subrayado crece al pasar */
+.enlace{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/100% 2px no-repeat;transition:background-size .22s var(--ease);padding-bottom:2px}
+.enlace:hover{background-size:0 2px;background-position:100% 100%}
+
+/* El botón: la única mandarina de cada pantalla */
+.wa{display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 30px;border:0;border-radius:999px;background:var(--mandarina);color:var(--negro);font:800 18px/1 Figtree,system-ui,sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s var(--ease)}
+.wa span{display:inline-block;transition:transform .2s var(--ease)}
+.wa:hover span{transform:translateX(4px)}
+.wa:active{transform:scale(.97)}
+
+/* Entradas simples */
+.entra{opacity:0;transform:translateY(14px);transition:opacity .24s var(--ease),transform .24s var(--ease)}
+.entra.visto{opacity:1;transform:none}
+
+/* Marcadores de material real que falta */
+.falta{background:var(--niebla);border:2px dashed var(--azul);color:var(--azul);padding:20px;font-size:15px;line-height:1.4}
+.falta b{display:block;font-size:13px;letter-spacing:.06em;margin-bottom:4px}
+
+/* ───────── PORTADA ───────── */
+.portada{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;display:flex;flex-direction:column}
+.cab{display:flex;align-items:center;gap:56px;padding:28px var(--m);position:relative;z-index:3}
+.cab img{height:32px;width:auto}
+.cab nav{display:flex;gap:32px}
+.cab nav a{font-size:17px;min-height:44px;display:inline-flex;align-items:center}
+.portada h1{font-weight:800;font-size:19.6vw;line-height:.8;letter-spacing:-.06em;white-space:nowrap;margin:3vw 0 0 calc(var(--m) - .055em);position:relative;z-index:2}
+.vuelta{position:relative;flex:1;min-height:40vw;margin-top:1.4vw}
+.vuelta .franja{position:absolute;top:0;right:0;bottom:-50vh;width:var(--franja);background:var(--azul)}
+.vuelta svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;font-size:9.4vw;font-weight:800;letter-spacing:-.05em}
+.vuelta .t-azul{fill:var(--azul)}
+.vuelta .t-blanco{fill:#fff}
+.bajada{position:absolute;left:var(--m);bottom:56px;z-index:2;max-width:470px}
+.bajada p{font-size:22px;line-height:1.42;margin-bottom:28px}
+.bajada .ultimo{font-size:16px;color:var(--gris);margin:22px 0 0}
+
+/* ───────── TRABAJO ───────── */
+.trabajo{padding:160px 0 0}
+.caso{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:start}
+.caso .pantalla{grid-column:1 / 9;background:var(--negro)}
+.caso .pantalla img{width:100%}
+.caso .ficha{grid-column:9 / 13;padding-right:var(--m);padding-top:8px}
+.caso h2{font-weight:800;font-size:96px;line-height:.88;letter-spacing:-.05em;margin:0 0 28px -.04em}
+.caso .ficha p{font-size:18px;max-width:30ch;margin-bottom:20px}
+.caso .dato{font-size:15px;color:var(--gris);border-top:1px solid var(--linea);padding-top:12px;margin-top:36px}
+.caso .tira{grid-column:5 / 13;display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:-22vw;position:relative;z-index:2;padding-right:var(--m)}
+.caso .tira > *{background:var(--negro)}
+.caso .tira img,.caso .tira video{width:100%;aspect-ratio:9/16;object-fit:cover;object-position:top}
+.caso .tira figure{margin:0}
+.caso figcaption,.catalogo figcaption{font-size:14px;color:var(--gris);padding:8px 0 0;background:#fff}
+.nuestro{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;padding:180px 0 0}
+.nuestro h2{grid-column:1 / 7;padding-left:var(--m);font-weight:800;font-size:76px;line-height:.9;letter-spacing:-.045em}
+.nuestro .al-lado{grid-column:8 / 12;align-self:end;font-size:18px}
+.catalogo{grid-column:1 / -1;display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-top:56px}
+.catalogo figure{margin:0}
+.catalogo img{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--niebla);transition:transform .25s var(--ease)}
+.catalogo figure:hover img{transform:translateY(-4px)}
+.catalogo figcaption{padding:8px 8px 22px}
+.catalogo figcaption b{color:var(--negro)}
+
+/* ───────── PROBLEMA ───────── */
+.problema{background:var(--azul);color:#fff;padding:150px var(--m) 170px;margin-top:120px;position:relative}
+.problema p.frase{font-weight:800;font-size:5.6vw;line-height:1;letter-spacing:-.035em;max-width:15.8em}
+.problema mark{background:#fff;color:var(--azul);padding:0 .1em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.problema .aparte{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;margin-top:80px}
+.problema .aparte p{grid-column:8 / 12;font-size:20px;line-height:1.45}
+
+/* ───────── QUÉ HACEMOS ───────── */
+.servicios{padding:150px 0 120px}
+.servicios .intro{padding:0 var(--m);font-size:20px;max-width:34ch;margin-bottom:64px}
+.servicio{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:end;border-top:2px solid var(--negro);padding:18px 0 26px;margin:0 var(--m)}
+.servicio:last-child{border-bottom:2px solid var(--negro)}
+.servicio h3{grid-column:1 / 9;font-weight:800;font-size:11.4vw;line-height:.82;letter-spacing:-.055em;margin-left:-.05em}
+.servicio p{grid-column:9 / 12;font-size:18px;padding-bottom:6px}
+.servicio .muestra{grid-column:12 / 13;align-self:center}
+.servicio .muestra img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top}
+.servicio:nth-child(3) h3{color:var(--azul)}
+
+/* ───────── CÓMO TRABAJAMOS: una esquina ───────── */
+.como{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;row-gap:72px;padding:120px var(--m) 160px;background:var(--niebla)}
+.como h2{grid-column:1 / 5;font-weight:800;font-size:64px;line-height:.92;letter-spacing:-.04em}
+.paso{font-size:36px;line-height:1.16;letter-spacing:-.018em}
+.paso b{color:var(--azul)}
+.p1{grid-column:5 / 9}
+.p2{grid-column:9 / 13}
+.p3{grid-column:9 / 13}
+.p4{grid-column:9 / 13}
+.como .vacio{grid-column:1 / 9;grid-row:2 / 4;align-self:end;font-size:16px;color:var(--gris);max-width:36ch}
+
+/* ───────── PARA QUIÉN ───────── */
+.para-quien{background:var(--negro);color:#fff;padding:140px 0 150px;overflow:hidden}
+.para-quien .encabezado{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;padding:0 var(--m);margin-bottom:56px}
+.para-quien h2{grid-column:1 / 7;font-weight:800;font-size:64px;line-height:.92;letter-spacing:-.04em}
+.para-quien .encabezado p{grid-column:8 / 12;align-self:end;font-size:18px}
+.rubros{list-style:none;font-weight:800;font-size:8.6vw;line-height:.9;letter-spacing:-.05em}
+.rubros li{white-space:nowrap;padding:0 var(--m);border-top:1px solid rgba(255,255,255,.22)}
+.rubros li:nth-child(even){text-align:right}
+.rubros li:last-child{color:var(--mandarina);border-bottom:1px solid rgba(255,255,255,.22)}
+
+/* ───────── NOSOTROS ───────── */
+.socios{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;padding:160px var(--m)}
+.socios .foto{grid-column:1 / 6;min-height:640px;display:flex;align-items:flex-end}
+.carta{grid-column:7 / 12;font-size:22px;line-height:1.5}
+.carta h2{font-weight:800;font-size:22px;margin-bottom:28px}
+.carta p{margin-bottom:22px}
+.carta .firma{margin-top:44px}
+.carta .firma .falta{max-width:340px;margin-bottom:12px}
+
+/* ───────── HABLEMOS ───────── */
+.hablemos{background:var(--azul);color:#fff;padding:120px var(--m) 140px;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;position:relative;overflow:hidden}
+.hablemos h2{grid-column:1 / -1;font-weight:800;font-size:21vw;line-height:.78;letter-spacing:-.065em;margin:0 0 80px -.06em}
+.hablemos .texto{grid-column:1 / 5}
+.hablemos .texto p{font-size:20px;line-height:1.45;margin-bottom:32px;max-width:28ch}
+.canales{list-style:none;font-size:20px}
+.canales li{margin-bottom:10px}
+.canales a{display:inline-flex;min-height:44px;align-items:center}
+form{grid-column:6 / 12}
+.campo{display:block;margin-bottom:34px}
+.campo span,legend{display:block;font-size:16px;margin-bottom:6px}
+.campo input{width:100%;font:800 30px/1.2 Figtree,system-ui,sans-serif;color:#fff;background:transparent;border:0;border-bottom:2px solid rgba(255,255,255,.6);padding:6px 0 10px;border-radius:0;transition:border-color .2s var(--ease)}
+.campo input::placeholder{color:rgba(255,255,255,.82);font-weight:400}
+.campo input:hover{border-color:#fff}
+.campo input:focus{outline:0;border-color:#fff;box-shadow:0 2px 0 #fff}
+fieldset{border:0;margin-bottom:40px}
+.opciones{display:flex;flex-wrap:wrap;gap:4px 28px;font-size:22px}
+.opciones label{display:inline-flex;align-items:center;gap:10px;min-height:44px;cursor:pointer}
+.opciones input{appearance:none;width:22px;height:22px;border:2px solid #fff;border-radius:50%;margin:0;display:grid;place-content:center;cursor:pointer}
+.opciones input::before{content:"";width:10px;height:10px;border-radius:50%;background:#fff;transform:scale(0);transition:transform .15s var(--ease)}
+.opciones input:checked::before{transform:scale(1)}
+.opciones input:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.mensaje{font-size:16px;margin-top:16px;min-height:24px}
+
+/* ───────── PIE ───────── */
+.pie{padding:72px var(--m) 0;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;row-gap:24px;overflow:hidden}
+.pie .lema{grid-column:1 / 6;font-weight:800;font-size:40px;line-height:1;letter-spacing:-.03em}
+.pie .nota{grid-column:7 / 10;font-size:16px;color:var(--gris)}
+.pie .redes{grid-column:10 / 13;list-style:none;font-size:16px;text-align:right}
+.pie .redes a{display:inline-flex;min-height:44px;align-items:center}
+.pie .gigante{grid-column:1 / -1;width:62vw;margin:40px 0 -16vw auto}
+
+/* ───────── CELULAR: su propia composición ───────── */
+@media (max-width:760px){
+  :root{--m:20px;--franja:22vw}
+  body{font-size:17px}
+  .cab{padding:18px var(--m);justify-content:space-between}
+  .cab img{height:24px}
+  .cab nav a:not(.ir-hablemos){display:none}
+  .cab nav{gap:0}
+  .portada h1{font-size:34vw;line-height:.78;white-space:normal;margin-top:18px}
+  .portada h1 span{display:block}
+  .vuelta{min-height:0;height:78vw;flex:none;margin-top:3vw}
+  .vuelta svg{font-size:19.5vw}
+  .bajada{position:relative;left:auto;bottom:auto;padding:0 var(--m) 40px;max-width:none;background:#fff;margin-right:var(--franja)}
+  .bajada p{font-size:19px}
+  .bajada .wa{width:calc(100% + var(--franja) - 24px);justify-content:center}
+  .portada{min-height:0}
+
+  .trabajo{padding-top:96px}
+  .caso{display:block}
+  .caso .ficha{padding:0 var(--m) 32px}
+  .caso h2{font-size:64px}
+  .caso .pantalla{display:none}
+  .caso .tira{margin:0;padding:0 0 0 var(--m);grid-template-columns:1fr 1fr}
+  .caso figcaption{padding:8px 0 0}
+  .nuestro{display:block;padding-top:110px}
+  .nuestro h2{font-size:48px;padding:0 var(--m);margin-bottom:20px}
+  .nuestro .al-lado{padding:0 var(--m)}
+  .catalogo{grid-template-columns:1fr 1fr;margin-top:36px}
+  .catalogo figure:nth-child(n+9){display:none}
+
+  .problema{padding:96px var(--m) 110px;margin-top:80px}
+  .problema p.frase{font-size:11vw;line-height:1.02}
+  .problema .aparte{display:block;margin-top:48px}
+  .problema .aparte p{font-size:18px}
+
+  .servicios{padding:96px 0 80px}
+  .servicios .intro{margin-bottom:36px;font-size:18px}
+  .servicio{display:block;padding:12px 0 22px}
+  .servicio h3{font-size:22vw;margin-bottom:14px}
+  .servicio:nth-child(4) h3{font-size:19vw}
+  .servicio p{max-width:34ch}
+  .servicio .muestra{display:none}
+  .servicio{position:relative}
+
+  .como{display:block;padding:90px var(--m) 100px}
+  .como h2{font-size:48px;margin-bottom:48px}
+  .paso{font-size:25px;margin-bottom:36px}
+  .p3,.p4{margin-left:16vw}
+  .como .vacio{margin-top:48px}
+
+  .para-quien{padding:96px 0 100px}
+  .para-quien .encabezado{display:block;margin-bottom:36px}
+  .para-quien h2{font-size:48px;margin-bottom:16px}
+  .rubros{font-size:14.6vw;line-height:.94}
+  .rubros li{white-space:normal}
+
+  .socios{display:flex;flex-direction:column-reverse;padding:96px var(--m)}
+  .socios .foto{min-height:110vw;margin-top:48px}
+  .carta{font-size:19px}
+
+  .hablemos{display:block;padding:80px var(--m) 100px}
+  .hablemos h2{font-size:20.4vw;margin-bottom:48px}
+  .hablemos .texto{margin-bottom:48px}
+  .campo input{font-size:24px}
+  .opciones{font-size:19px;display:grid;grid-template-columns:1fr 1fr}
+  form .wa{width:100%;justify-content:center}
+
+  .pie{display:block;padding-top:56px}
+  .pie .lema{font-size:32px;margin-bottom:20px}
+  .pie .nota{margin-bottom:16px}
+  .pie .redes{text-align:left}
+  .pie .gigante{width:110vw;margin:32px -30vw -30vw auto}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before{transition:none!important;animation:none!important}
+  .entra{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="saltar" href="#trabajo">Saltar al contenido</a>
+
+<header class="portada" id="inicio">
+  <div class="cab">
+    <a href="#inicio" aria-label="VIRA, inicio"><img src="marca/lockup-negro.svg" alt="VIRA" width="123" height="34"></a>
+    <nav aria-label="Principal">
+      <a class="enlace" href="#trabajo">Trabajo</a>
+      <a class="enlace" href="#como">Cómo trabajamos</a>
+      <a class="enlace" href="#socios">Nosotros</a>
+      <a class="enlace ir-hablemos" href="#hablemos">Hablemos</a>
+    </nav>
+  </div>
+  <h1><span class="oculto">Publicidad con otra vuelta.</span><span aria-hidden="true"><span>Publi</span><span>cidad</span></span></h1>
+  <div class="vuelta" aria-hidden="true">
+    <div class="franja"></div>
+    <svg>
+      <defs>
+        <path id="calle" fill="none"/>
+        <clipPath id="antes"><rect class="r-antes"/></clipPath>
+        <clipPath id="despues"><rect class="r-despues"/></clipPath>
+      </defs>
+      <text class="t-azul" clip-path="url(#antes)"><textPath href="#calle">con otra vuelta.</textPath></text>
+      <text class="t-blanco" clip-path="url(#despues)"><textPath href="#calle">con otra vuelta.</textPath></text>
+    </svg>
+  </div>
+  <div class="bajada">
+    <p>Somos <b>Nicolás y Román</b>. Le hacemos la marca, los anuncios y la web a negocios chicos de Uruguay. Cuando escribís, te contestamos nosotros dos, no un formulario.</p>
+    <a class="wa" href="#hablemos" data-wa>Escribinos por WhatsApp <span aria-hidden="true">→</span></a>
+    <p class="ultimo">Lo último que hicimos: <a class="enlace" href="#trabajo">la tienda de Ferrotech</a>.</p>
+  </div>
+</header>
+
+<main>
+<section class="trabajo" id="trabajo" aria-labelledby="t-ferrotech">
+  <div class="caso">
+    <div class="pantalla entra"><img src="img/ferrotech-escritorio.webp" alt="Portada de la tienda de Ferrotech en computadora: Todo para construir, reparar y pintar" width="1200" height="983" loading="lazy"></div>
+    <div class="ficha entra">
+      <h2 id="t-ferrotech">Ferro&shy;tech</h2>
+      <p>Una ferretería y pinturería que quería vender también fuera del mostrador. Le armamos la tienda en internet, con pedidos por WhatsApp, y un video corto para presentarla en Instagram.</p>
+      <p><a class="enlace" href="https://ferrotech.uy" target="_blank" rel="noopener">Ver la tienda en ferrotech.uy</a></p>
+      <p class="dato">Todavía no tenemos números de este trabajo para mostrar. Cuando los tengamos, van acá.</p>
+    </div>
+    <div class="tira">
+      <figure class="entra"><img src="img/ferrotech-celular.webp" alt="La tienda de Ferrotech en el celular, con los productos destacados" width="390" height="1980" loading="lazy"><figcaption>La tienda, en el celular.</figcaption></figure>
+      <figure class="entra"><video src="video/reel-ferrotech.mp4" poster="img/ferrotech-reel-portada.webp" muted playsinline loop preload="none" controls data-auto aria-label="Video de presentación de la tienda de Ferrotech, 21 segundos"></video><figcaption>El video para presentarla. 21 segundos.</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="nuestro">
+    <h2 class="entra">Y esto lo hicimos para nosotros.</h2>
+    <p class="al-lado entra">Todo lo que publicamos desde que arrancamos. Es la forma más honesta que encontramos de mostrarte cómo pensamos antes de pensar para vos.</p>
+    <div class="catalogo">
+      <figure><img src="img/es-para-vos.webp" alt="Lámina azul: ¿Es para vos?" loading="lazy" width="720" height="900"><figcaption><b>¿Es para vos?</b> Carrusel</figcaption></figure>
+      <figure><img src="img/vidriera.webp" alt="Lámina: Tu vidriera también está en Instagram" loading="lazy" width="720" height="900"><figcaption><b>Tu vidriera</b> Carrusel</figcaption></figure>
+      <figure><img src="img/abri-con-la-marca.webp" alt="Lámina: Abrí con la marca lista" loading="lazy" width="720" height="900"><figcaption><b>Locales por abrir</b> Carrusel</figcaption></figure>
+      <figure><img src="img/todo-negocio.webp" alt="Lámina negra: Todo negocio sirve" loading="lazy" width="720" height="900"><figcaption><b>Todo negocio sirve</b> Carrusel</figcaption></figure>
+      <figure><img src="img/antes-de-anuncios.webp" alt="Lámina: Antes de pagar anuncios, revisá esto" loading="lazy" width="720" height="900"><figcaption><b>Antes de pagar anuncios</b> 7 láminas</figcaption></figure>
+      <figure><img src="img/antes-de-anuncios-2.webp" alt="Lámina: Tu biografía dice qué hacés y dónde" loading="lazy" width="720" height="900"><figcaption><b>Tu biografía dice qué hacés</b> Lámina 2</figcaption></figure>
+      <figure><img src="img/biografia.webp" alt="Lámina: Si alguien entra a tu perfil y no entiende qué vendés, se va" loading="lazy" width="720" height="900"><figcaption><b>Tu biografía</b> 7 láminas</figcaption></figure>
+      <figure><img src="img/biografia-6.webp" alt="Lámina: Así queda una biografía de ejemplo" loading="lazy" width="720" height="900"><figcaption><b>Así queda</b> Con un comercio de ejemplo</figcaption></figure>
+      <figure><img src="img/destacadas.webp" alt="Lámina: Qué poner en tus destacadas" loading="lazy" width="720" height="900"><figcaption><b>Tus destacadas</b> 7 láminas</figcaption></figure>
+      <figure><img src="img/seguinos.webp" alt="Lámina en puntos azules: Seguinos" loading="lazy" width="720" height="900"><figcaption><b>Seguinos</b> Cierre de campaña</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="problema sobre-azul" id="problema" aria-label="El problema">
+  <p class="frase entra">El que trabaja <mark>por su cuenta</mark> te cobra poco y un día deja de contestar. La <mark>agencia grande</mark> tiene método, pero ahí sos el cliente más chico. Nosotros nos paramos <mark>en el medio</mark>, a propósito.</p>
+  <div class="aparte"><p class="entra">Trabajamos con el orden de una agencia y a la escala de tu negocio. Y del otro lado del WhatsApp somos siempre los mismos dos.</p></div>
+</section>
+
+<section class="servicios" id="que-hacemos" aria-labelledby="t-servicios">
+  <h2 id="t-servicios" class="oculto">Qué hacemos</h2>
+  <p class="intro entra">Hacemos tres cosas, y las hacemos juntas para que todo se vea como una sola marca.</p>
+  <div class="servicio entra">
+    <h3>Marca</h3>
+    <p>Logo, colores, tipografía, cartelería y las piezas para redes. Que tu negocio se reconozca antes de leer el nombre.</p>
+    <div class="muestra"><img src="img/todo-negocio.webp" alt="" loading="lazy"></div>
+  </div>
+  <div class="servicio entra">
+    <h3>Anuncios</h3>
+    <p>Campañas en Instagram y Facebook con piezas que parecen tuyas. Te contamos qué se gastó y qué volvió, sin adivinar.</p>
+    <div class="muestra"><img src="img/antes-de-anuncios.webp" alt="" loading="lazy"></div>
+  </div>
+  <div class="servicio entra">
+    <h3>Sitios web</h3>
+    <p>A medida y pensados primero para el celular, con el WhatsApp a un toque. Como el de Ferrotech.</p>
+    <div class="muestra"><img src="img/ferrotech-celular.webp" alt="" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="como" id="como" aria-labelledby="t-como">
+  <h2 id="t-como" class="entra">De la primera charla a los números.</h2>
+  <p class="paso p1 entra"><b>Primero charlamos.</b> Te mandamos unas preguntas cortas sobre tu negocio, tu gente y adónde querés llegar. Las contestás cuando puedas.</p>
+  <p class="paso p2 entra"><b>Armamos tu marca y tu sitio</b> a partir de referencias reales. Te mostramos más de una opción, te decimos cuál nos gusta y por qué. Elegís vos.</p>
+  <p class="paso p3 entra"><b>Salimos con anuncios</b> que se ven como tu marca, así quien los ve después te reconoce en la calle.</p>
+  <p class="paso p4 entra"><b>Te mostramos los números</b> en simple: qué hicimos y qué pasó. Si algo no anduvo, también.</p>
+</section>
+
+<section class="para-quien sobre-negro" id="para-quien" aria-labelledby="t-quien">
+  <div class="encabezado">
+    <h2 id="t-quien" class="entra">Todo negocio sirve.</h2>
+    <p class="entra">Para cualquier negocio que quiera que lo busquen por el nombre y no solo porque pasan por la puerta.</p>
+  </div>
+  <ul class="rubros">
+    <li>Comercios</li>
+    <li>Tiendas por internet</li>
+    <li>Cafés y restaurantes</li>
+    <li>Profesionales</li>
+    <li>Salud y bienestar</li>
+    <li>Oficios y talleres</li>
+    <li>Locales por abrir</li>
+    <li>El tuyo también.</li>
+  </ul>
+</section>
+
+<section class="socios" id="socios" aria-labelledby="t-socios">
+  <div class="falta foto"><div><b>FOTO REAL</b>Las manos de los dos trabajando sobre la mesa, de espaldas o desde arriba: láminas impresas, un marcador, la notebook. Sin caras. Luz de día de ventana. Vertical 4:5, mínimo 1600 px de ancho.</div></div>
+  <div class="carta entra">
+    <h2 id="t-socios">Una carta, porque fotos todavía no.</h2>
+    <p>Hola. Somos Nicolás y Román, y VIRA somos nosotros dos. No hay nadie más atrás: el que te arma la marca es el mismo que después te muestra los números, y el que te contesta el WhatsApp también.</p>
+    <p>Arrancamos hace poco y no te vamos a mostrar clientes que no tenemos. Lo que sí tenemos es una idea fija: un negocio chico puede verse como uno grande si alguien se toma en serio el trabajo de pensarlo.</p>
+    <p>Si te quedaron ganas de hablar, escribinos. Y si no, contanos por qué: también nos sirve.</p>
+    <div class="firma">
+      <div class="falta"><b>ESCANEO</b>Las dos firmas a mano, en marcador negro sobre papel blanco, escaneadas a 600 ppp. Van una al lado de la otra.</div>
+      <p>Nicolás y Román</p>
+    </div>
+  </div>
+</section>
+
+<section class="hablemos sobre-azul" id="hablemos" aria-labelledby="t-hablemos">
+  <h2 id="t-hablemos" class="entra">Hablemos.</h2>
+  <div class="texto">
+    <p>Contanos quién sos y qué necesitás. Te armamos el mensaje y lo mandás por WhatsApp; te contesta uno de nosotros dos.</p>
+    <ul class="canales" id="canales"></ul>
+  </div>
+  <form id="formulario" novalidate>
+    <label class="campo"><span>Tu nombre</span><input type="text" name="nombre" autocomplete="given-name" placeholder="Cómo te llamás"></label>
+    <label class="campo"><span>Tu negocio</span><input type="text" name="negocio" placeholder="Qué vendés y dónde"></label>
+    <fieldset>
+      <legend>Qué necesitás</legend>
+      <div class="opciones">
+        <label><input type="radio" name="necesito" value="una marca nueva" checked> Marca</label>
+        <label><input type="radio" name="necesito" value="anuncios pagos"> Anuncios</label>
+        <label><input type="radio" name="necesito" value="un sitio web"> Sitio web</label>
+        <label><input type="radio" name="necesito" value="marca, anuncios y sitio web"> Todo junto</label>
+      </div>
+    </fieldset>
+    <button class="wa" type="submit" id="enviar">Mandar por WhatsApp <span aria-hidden="true">→</span></button>
+    <p class="mensaje" id="mensaje" role="status" aria-live="polite"></p>
+  </form>
+</section>
+</main>
+
+<footer class="pie">
+  <p class="lema">Publicidad con otra vuelta.</p>
+  <p class="nota">Esta web la hicimos nosotros, como todo lo demás. Si encontrás algo que no anda, avisanos: nos vas a caer bien.<br>© 2026 VIRA · Uruguay</p>
+  <ul class="redes" id="redes"></ul>
+  <img class="gigante" src="marca/simbolo-azul.svg" alt="" width="513" height="420">
+</footer>
+
+<script>
+/* ── Contacto: completar acá y listo ─────────────────────────────
+   whatsapp: solo números con código de país, ej. "59899123456"
+   email: ej. "hola@vira.uy"      instagram: sin @, ej. "vira.uy"   */
+const CONTACTO = { whatsapp: '59899002974', email: 'vira.uruguay@gmail.com', instagram: 'vira.uruguay' };
+
+(() => {
+  const waBase = CONTACTO.whatsapp ? 'https://wa.me/' + CONTACTO.whatsapp : '';
+  document.querySelectorAll('[data-wa]').forEach((a) => {
+    if (waBase) { a.href = waBase + '?text=' + encodeURIComponent('Hola VIRA, quiero hablar de mi negocio.'); a.target = '_blank'; a.rel = 'noopener'; }
+  });
+  const lista = (ul, label, href) => { const li = document.createElement('li'); const a = document.createElement('a'); a.className = 'enlace'; a.href = href; a.textContent = label; if (href.startsWith('http')) { a.target = '_blank'; a.rel = 'noopener'; } li.appendChild(a); ul.appendChild(li); };
+  ['canales', 'redes'].forEach((id) => {
+    const ul = document.getElementById(id);
+    if (CONTACTO.whatsapp) lista(ul, 'WhatsApp', waBase);
+    if (CONTACTO.email) lista(ul, CONTACTO.email, 'mailto:' + CONTACTO.email);
+    if (CONTACTO.instagram) lista(ul, '@' + CONTACTO.instagram, 'https://instagram.com/' + CONTACTO.instagram);
+  });
+
+  // Formulario: arma el mensaje y abre WhatsApp (o el mail si no hay WhatsApp)
+  const form = document.getElementById('formulario'), msg = document.getElementById('mensaje'), boton = document.getElementById('enviar');
+  if (!CONTACTO.whatsapp && CONTACTO.email) boton.firstChild.textContent = 'Mandar por mail ';
+  if (!CONTACTO.whatsapp && !CONTACTO.email && CONTACTO.instagram) boton.firstChild.textContent = 'Mandar por Instagram ';
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const d = new FormData(form);
+    const nombre = (d.get('nombre') || '').toString().trim(), negocio = (d.get('negocio') || '').toString().trim(), necesito = d.get('necesito');
+    if (!nombre || !negocio) { msg.textContent = 'Completá tu nombre y tu negocio para armar el mensaje.'; (nombre ? form.negocio : form.nombre).focus(); return; }
+    const texto = `Hola VIRA, soy ${nombre}. Tengo ${negocio} y necesito ${necesito}. ¿Hablamos?`;
+    if (CONTACTO.whatsapp) { msg.textContent = 'Abriendo WhatsApp con tu mensaje.'; window.open(waBase + '?text=' + encodeURIComponent(texto), '_blank', 'noopener'); }
+    else if (CONTACTO.email) { msg.textContent = 'Abriendo tu correo con el mensaje armado.'; location.href = 'mailto:' + CONTACTO.email + '?subject=' + encodeURIComponent('Quiero hablar con VIRA') + '&body=' + encodeURIComponent(texto); }
+    else if (CONTACTO.instagram) { msg.textContent = 'Copiamos tu mensaje. Pegalo en el chat de Instagram que se abre: «' + texto + '»'; try { navigator.clipboard.writeText(texto); } catch (err) {} window.open('https://ig.me/m/' + CONTACTO.instagram, '_blank', 'noopener'); }
+    else { msg.textContent = 'Todavía no podemos recibir mensajes desde acá. Este es tu mensaje, listo para enviar apenas activemos el contacto: «' + texto + '»'; }
+  });
+})();
+
+/* La vuelta: el único gesto de movimiento de la página.
+   Un renglón que va derecho, dobla una esquina de 90° y baja, como un auto que agarra una calle.
+   Al doblar entra en la franja azul y cambia de color. Avanza con el desplazamiento, una sola vez.
+   Con "reducir movimiento" queda quieto, tal como se ve al cargar. */
+(() => {
+  const quieto = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const caja = document.querySelector('.vuelta');
+  const svg = caja.querySelector('svg'), camino = svg.querySelector('#calle'), franja = caja.querySelector('.franja');
+  const textos = svg.querySelectorAll('textPath');
+  const rA = svg.querySelector('.r-antes'), rD = svg.querySelector('.r-despues');
+  let esquina = 0, tam = 0;
+  const INICIO = 5.4, FIN = 1.4; // en "em" antes de la esquina
+  function armar() {
+    const w = caja.clientWidth, h = caja.clientHeight;
+    const movil = innerWidth <= 760;
+    tam = parseFloat(getComputedStyle(svg).fontSize);
+    const fw = franja.offsetWidth;
+    const radio = movil ? tam * 0.9 : tam * 1.05;
+    const alto = tam * 0.72;                              // alto de las letras: al bajar, crecen hacia la derecha del renglón
+    const xVertical = w - fw + (fw - alto) / 2;          // el renglón baja por el medio de la franja
+    const y = tam * 0.8, x1 = xVertical - radio;
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    camino.setAttribute('d', `M 0 ${y} H ${x1} A ${radio} ${radio} 0 0 1 ${xVertical} ${y + radio} V ${h + tam * 6}`);
+    esquina = x1 + Math.PI * radio / 4;
+    const corte = w - fw;
+    [rA, rD].forEach((r) => { r.setAttribute('y', -tam); r.setAttribute('height', h + tam * 8); });
+    rA.setAttribute('x', -10); rA.setAttribute('width', corte + 10);
+    rD.setAttribute('x', corte); rD.setAttribute('width', fw + 10);
+    mover();
+  }
+  function mover() {
+    let t = 0.25; // quieto: se queda como se ve al cargar
+    if (!quieto) { const r = caja.getBoundingClientRect(); t = 0.25 + 0.75 * Math.min(1, Math.max(0, -r.top / (r.height * 0.8))); }
+    const em = INICIO + (FIN - INICIO) * t;
+    textos.forEach((tp) => tp.setAttribute('startOffset', Math.max(0, esquina - em * tam)));
+  }
+  armar();
+  addEventListener('resize', armar);
+  if (!quieto) addEventListener('scroll', () => requestAnimationFrame(mover), { passive: true });
+  if (document.fonts) document.fonts.ready.then(armar);
+})();
+
+/* Entradas simples y video que arranca solo cuando se ve (si no se pidió quieto) */
+(() => {
+  const quieto = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.entra').forEach((el) => io.observe(el));
+  const v = document.querySelector('video[data-auto]');
+  if (v && !quieto) new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) v.play().catch(() => {}); else v.pause(); }), { threshold: .4 }).observe(v);
+})();
+</script>
+</body>
+</html>
