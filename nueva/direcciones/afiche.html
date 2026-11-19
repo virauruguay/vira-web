@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>VIRA · Dirección Afiche</title>
+<link rel="icon" href="../marca/simbolo-azul.svg">
+<style>
+@font-face{font-family:Figtree;font-weight:400;font-display:swap;src:url(../fuentes/figtree-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Figtree;font-weight:800;font-display:swap;src:url(../fuentes/figtree-latin-800-normal.woff2) format("woff2")}
+:root{--azul:#2E43E0;--azul-p:#2536C2;--mandarina:#FF7A3D;--negro:#0B0B0F;--niebla:#EEF0FA;--blanco:#fff;--ease:cubic-bezier(.23,1,.32,1)}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:Figtree,system-ui,sans-serif;font-weight:400;color:var(--negro);background:var(--blanco);font-size:18px;line-height:1.5;overflow-x:hidden}
+::selection{background:var(--azul);color:#fff}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--azul);outline-offset:4px;border-radius:2px}
+.wa{display:inline-flex;align-items:center;min-height:48px;padding:0 26px;border-radius:999px;background:var(--mandarina);color:var(--negro);font-weight:800;font-size:17px;text-decoration:none;transition:transform .2s var(--ease)}
+.wa:hover{transform:translateY(-2px)}
+.wa:active{transform:scale(.97)}
+.wa:focus-visible{outline-color:var(--negro)}
+
+/* PORTADA */
+.cab{display:flex;align-items:center;justify-content:space-between;padding:28px 48px;position:relative;z-index:2}
+.cab img{height:34px;display:block}
+.cab nav{display:flex;gap:36px;align-items:center}
+.cab nav a:not(.wa){text-decoration:none;font-size:17px;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent;transition:border-color .2s var(--ease)}
+.cab nav a:not(.wa):hover{border-color:var(--negro)}
+.portada{position:relative;min-height:100vh;padding-bottom:64px}
+.portada h1{font-weight:800;font-size:19.5vw;line-height:.86;letter-spacing:-.055em;margin:2vw 0 0 -.05em;padding-left:40px;white-space:nowrap}
+.vuelta{position:relative;height:42vw;margin-top:-1.2vw;color:var(--azul)}
+.vuelta svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;font-size:9.6vw;font-weight:800;letter-spacing:-.05em}
+.vuelta text{fill:currentColor}
+.bajada{position:absolute;left:48px;bottom:72px;max-width:440px}
+.bajada p{font-size:22px;line-height:1.4;margin-bottom:28px}
+.bajada strong{font-weight:800}
+
+/* TRABAJO */
+.trabajo{display:grid;grid-template-columns:repeat(12,1fr);min-height:100vh}
+.trabajo .campo{grid-column:1 / 5;background:var(--azul);color:#fff;padding:120px 48px 48px;display:flex;flex-direction:column;justify-content:space-between;position:sticky;top:0;height:100vh}
+.campo h2{font-weight:800;font-size:76px;line-height:.92;letter-spacing:-.045em}
+.campo p{font-size:18px;max-width:30ch}
+.campo img{width:62%;margin-left:-48px;opacity:1}
+.grilla{grid-column:5 / 13;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px 0 4px 4px;align-content:start}
+.grilla figure{margin:0}
+.grilla img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;background:var(--niebla)}
+.grilla .alta img{aspect-ratio:9/16}
+.grilla figcaption{font-size:14px;padding:8px 2px 18px;color:#45454A}
+.grilla figcaption b{font-weight:800;color:var(--negro)}
+
+@media (max-width:760px){
+  body{font-size:17px}
+  .cab{padding:18px 20px}
+  .cab img{height:26px}
+  .cab nav a:not(.wa){display:none}
+  .cab .wa{display:none}
+  .portada{min-height:auto;padding-bottom:0}
+  .portada h1{font-size:33vw;line-height:.8;white-space:normal;padding-left:14px;margin-top:22px;word-break:keep-all}
+  .portada h1 span{display:block}
+  .vuelta{height:96vw;margin-top:4vw}
+  .vuelta svg{font-size:19vw}
+  .bajada{position:relative;left:auto;bottom:auto;padding:0 20px 56px;max-width:none}
+  .bajada p{font-size:19px;max-width:20ch}
+  .bajada .wa{width:100%;justify-content:center;min-height:56px}
+  .trabajo{display:block}
+  .trabajo .campo{position:relative;height:auto;padding:56px 20px 0;display:block}
+  .campo h2{font-size:52px;margin-bottom:20px}
+  .campo p{margin-bottom:36px}
+  .campo img{width:78%;margin:0 0 -1px -20px}
+  .grilla{grid-template-columns:1fr 1fr;padding:4px 0 96px}
+  .grilla figure:first-child{grid-column:1 / -1}
+  .grilla figcaption{font-size:13px;padding:6px 6px 14px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="portada" id="inicio">
+  <div class="cab">
+    <img src="../marca/lockup-negro.svg" alt="VIRA">
+    <nav aria-label="Principal">
+      <a href="#trabajo">Trabajo</a>
+      <a href="#como">Cómo trabajamos</a>
+      <a href="#socios">Nosotros</a>
+      <a class="wa" href="https://wa.me/" data-wa>Escribinos por WhatsApp</a>
+    </nav>
+  </div>
+  <h1><span>Publi</span><span>cidad</span></h1>
+  <div class="vuelta" data-vuelta data-radio="150" data-margen="48" data-inicio="5.2" data-fin="1.2" aria-hidden="true">
+    <svg><path id="calle-1" fill="none"/><text><textPath href="#calle-1">con otra vuelta.</textPath></text></svg>
+  </div>
+  <p class="sr-only" style="position:absolute;left:-9999px">Publicidad con otra vuelta.</p>
+  <div class="bajada">
+    <p>Somos <strong>Nicolás y Román</strong>. Le hacemos la marca, los anuncios y la web a negocios chicos de Uruguay. Cuando escribís, te contestamos nosotros dos, no un formulario.</p>
+    <a class="wa" href="https://wa.me/" data-wa>Escribinos por WhatsApp</a>
+  </div>
+</header>
+
+<section class="trabajo" id="trabajo">
+  <div class="campo">
+    <div>
+      <h2>Clientes para mostrarte todavía no tenemos.</h2>
+      <p style="margin-top:24px">Arrancamos hace poco. Mientras tanto, esto es todo lo que publicamos para nosotros mismos: mirá cómo pensamos antes de que pensemos para vos.</p>
+    </div>
+    <img src="../marca/simbolo-blanco.svg" alt="">
+  </div>
+  <div class="grilla">
+    <figure><img src="../img/es-para-vos.webp" alt="Lámina azul con la pregunta ¿Es para vos? y el símbolo de VIRA en negro" loading="lazy"><figcaption><b>¿Es para vos?</b> Carrusel de lanzamiento, 6 láminas</figcaption></figure>
+    <figure><img src="../img/antes-de-anuncios.webp" alt="Lámina: Antes de pagar anuncios, revisá esto" loading="lazy"><figcaption><b>Antes de pagar anuncios</b> Carrusel, 7 láminas</figcaption></figure>
+    <figure><img src="../img/capa-por-capa.webp" alt="Lámina negra con el símbolo en alambre: Marca, anuncios y sitio web. Capa por capa" loading="lazy"><figcaption><b>Capa por capa</b> Carrusel de lanzamiento</figcaption></figure>
+    <figure><img src="../img/abri-con-la-marca.webp" alt="Lámina: Abrí con la marca lista" loading="lazy"><figcaption><b>Abrí con la marca lista</b> Para locales por abrir</figcaption></figure>
+    <figure><img src="../img/biografia.webp" alt="Lámina: Si alguien entra a tu perfil y no entiende qué vendés, se va" loading="lazy"><figcaption><b>Tu biografía</b> Carrusel, 7 láminas</figcaption></figure>
+    <figure><img src="../img/seguinos.webp" alt="Lámina en puntos azules: Seguinos" loading="lazy"><figcaption><b>Seguinos</b> Cierre de campaña</figcaption></figure>
+  </div>
+</section>
+
+<script>
+const CONTACTO = { whatsapp: '59899002974', email: 'vira.uruguay@gmail.com', instagram: 'vira.uruguay' };
+document.querySelectorAll('[data-wa]').forEach(a=>a.href='https://wa.me/'+CONTACTO.whatsapp+'?text='+encodeURIComponent('Hola VIRA, les escribo desde la web.'));
+</script>
+<script src="vuelta.js"></script>
+</body>
+</html>

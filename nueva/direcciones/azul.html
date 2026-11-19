@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>VIRA · Dirección Azul total</title>
+<link rel="icon" href="../marca/simbolo-azul.svg">
+<style>
+@font-face{font-family:Figtree;font-weight:400;font-display:swap;src:url(../fuentes/figtree-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Figtree;font-weight:800;font-display:swap;src:url(../fuentes/figtree-latin-800-normal.woff2) format("woff2")}
+:root{--azul:#2E43E0;--azul-p:#2536C2;--mandarina:#FF7A3D;--negro:#0B0B0F;--blanco:#fff;--ease:cubic-bezier(.23,1,.32,1)}
+*{box-sizing:border-box;margin:0}
+body{font-family:Figtree,system-ui,sans-serif;font-weight:400;background:var(--azul);color:#fff;font-size:18px;line-height:1.5;overflow-x:hidden}
+::selection{background:#fff;color:var(--azul)}
+a{color:inherit}
+:focus-visible{outline:3px solid #fff;outline-offset:4px;border-radius:2px}
+.wa{display:inline-flex;align-items:center;min-height:52px;padding:0 28px;border-radius:999px;background:var(--mandarina);color:var(--negro);font-weight:800;font-size:17px;text-decoration:none;transition:transform .2s var(--ease)}
+.wa:hover{transform:translateY(-2px)}
+.wa:active{transform:scale(.97)}
+.wa:focus-visible{outline-color:#fff}
+
+.portada{position:relative;min-height:100vh;overflow:hidden;background-color:var(--azul);background-image:url(../marca/patron-trenza-profundo.svg);background-size:260px}
+.portada::before{content:"";position:absolute;inset:0;background:var(--azul);opacity:.55}
+.cab{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:30px 48px}
+.cab img{height:30px;display:block}
+.cab nav{display:flex;gap:36px}
+.cab nav a{text-decoration:none;font-size:17px;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent;transition:border-color .2s var(--ease)}
+.cab nav a:hover{border-color:#fff}
+.gigante{position:absolute;z-index:1;right:-10vw;top:104px;width:60vw;max-width:none}
+.titulo{position:absolute;z-index:2;left:48px;top:150px;bottom:56px;width:52vw;display:flex;flex-direction:column;justify-content:space-between}
+.titulo h1{order:2;font-weight:800;font-size:9.6vw;line-height:.88;letter-spacing:-.05em;margin-left:-.05em}
+.titulo .lado{order:1;max-width:400px}
+.titulo p{font-size:20px;line-height:1.45;margin-bottom:28px;max-width:30ch}
+.titulo b{font-weight:800}
+
+.problema{position:relative;padding:160px 48px 180px;border-top:1px solid rgba(255,255,255,.25)}
+.problema p.grande{font-weight:800;font-size:5.4vw;line-height:1.02;letter-spacing:-.035em;max-width:16.5em}
+.problema mark{background:var(--negro);color:#fff;padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.problema .pie{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:96px}
+.problema .pie p{grid-column:8 / 12;font-size:20px;line-height:1.45}
+.problema .esquina{position:absolute;left:-6vw;bottom:-9vw;width:30vw;opacity:.14}
+
+@media (max-width:760px){
+  body{font-size:17px}
+  .portada{min-height:100svh;display:flex;flex-direction:column}
+  .cab{padding:20px}
+  .cab img{height:24px}
+  .cab nav{display:none}
+  .gigante{width:118vw;right:-50vw;top:-6vw}
+  .titulo{position:relative;left:auto;top:auto;width:auto;bottom:auto;margin-top:auto;padding:0 20px 28px;display:flex}
+  .titulo h1{order:0}
+  .titulo h1{font-size:19vw;line-height:.86;margin-bottom:24px}
+  .titulo p{font-size:18px}
+  .titulo .wa{width:100%;justify-content:center;min-height:56px}
+  .problema{padding:80px 20px 96px}
+  .problema p.grande{font-size:10.4vw;line-height:1.06}
+  .problema .pie{display:block;margin-top:48px}
+  .problema .esquina{width:70vw;left:auto;right:-30vw;bottom:-16vw}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="portada">
+  <div class="cab">
+    <img src="../marca/lockup-blanco.svg" alt="VIRA">
+    <nav aria-label="Principal"><a href="#trabajo">Trabajo</a><a href="#como">Cómo trabajamos</a><a href="#socios">Nosotros</a></nav>
+  </div>
+  <img class="gigante" src="../marca/simbolo-blanco.svg" alt="">
+  <div class="titulo">
+    <h1>Que te busquen por el nombre.</h1>
+    <div class="lado">
+      <p>Marca, anuncios y web para negocios chicos de Uruguay, hechos por <b>Nicolás y Román</b>. Si escribís, contestamos nosotros.</p>
+      <a class="wa" href="https://wa.me/" data-wa>Escribinos por WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<section class="problema" id="problema">
+  <p class="grande">El freelancer te cobra poco y un día <mark>deja de contestar</mark>. La agencia grande tiene proceso, pero ahí <mark>sos el cliente más chico</mark>. Nosotros nos paramos <mark>en el medio</mark>, a propósito.</p>
+  <div class="pie"><p>Con método de agencia y a la escala de tu negocio. Y del otro lado del WhatsApp somos siempre los mismos dos.</p></div>
+  <img class="esquina" src="../marca/simbolo-blanco.svg" alt="">
+</section>
+
+<script>
+const CONTACTO = { whatsapp: '59899002974', email: 'vira.uruguay@gmail.com', instagram: 'vira.uruguay' };
+document.querySelectorAll('[data-wa]').forEach(a=>a.href='https://wa.me/'+CONTACTO.whatsapp+'?text='+encodeURIComponent('Hola VIRA, les escribo desde la web.'));
+</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>VIRA · Dirección Taller</title>
+<link rel="icon" href="../marca/simbolo-azul.svg">
+<style>
+@font-face{font-family:Figtree;font-weight:400;font-display:swap;src:url(../fuentes/figtree-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Figtree;font-weight:800;font-display:swap;src:url(../fuentes/figtree-latin-800-normal.woff2) format("woff2")}
+:root{--azul:#2E43E0;--mandarina:#FF7A3D;--negro:#0B0B0F;--niebla:#EEF0FA;--gris:#45454A;--ease:cubic-bezier(.23,1,.32,1)}
+*{box-sizing:border-box;margin:0}
+body{font-family:Figtree,system-ui,sans-serif;font-weight:400;color:var(--negro);background:#fff;font-size:18px;line-height:1.5;overflow-x:hidden}
+::selection{background:var(--azul);color:#fff}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--azul);outline-offset:4px;border-radius:2px}
+.wa{display:inline-flex;align-items:center;min-height:52px;padding:0 28px;border-radius:999px;background:var(--mandarina);color:var(--negro);font-weight:800;font-size:17px;text-decoration:none;transition:transform .2s var(--ease)}
+.wa:hover{transform:translateY(-2px)}
+.wa:active{transform:scale(.97)}
+
+/* Marcadores de material que falta: se reemplazan por fotos y escaneos reales */
+.falta{background:var(--niebla);border:2px dashed var(--azul);color:var(--azul);display:flex;flex-direction:column;justify-content:flex-start;padding:24px;font-size:15px;line-height:1.4}
+.falta b{font-weight:800;display:block;margin-bottom:6px;font-size:13px;letter-spacing:.06em}
+
+.cab{display:flex;justify-content:space-between;align-items:center;padding:28px 48px}
+.cab img{height:32px;display:block}
+.cab nav{display:flex;gap:36px}
+.cab nav a{text-decoration:none;font-size:17px;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent}
+.cab nav a:hover{border-color:var(--negro)}
+
+.portada{display:grid;grid-template-columns:repeat(12,1fr);min-height:calc(100vh - 100px);position:relative}
+.portada .texto{grid-column:1 / 6;padding:48px 0 56px 48px;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:2}
+.portada h1{font-weight:800;font-size:6.2vw;line-height:.9;letter-spacing:-.045em;margin-left:-.04em}
+.portada p{font-size:20px;line-height:1.45;max-width:28ch;margin-bottom:28px}
+.mesa{grid-column:6 / 13;position:relative;min-height:720px}
+.mesa .foto{position:absolute;inset:0 0 0 0;padding:32px 40% 32px 32px}
+.mesa .piezas{position:absolute;left:-9vw;bottom:-72px;display:flex;gap:0;z-index:3}
+.mesa .piezas img{width:15vw;display:block}
+.mesa .piezas img+img{margin-left:-2vw;margin-top:4vw}
+.portada .texto>div{margin-top:40px}
+.mesa .nota{position:absolute;left:14vw;bottom:-120px;width:300px;min-height:110px;z-index:4}
+.puntos{position:absolute;left:-7vw;top:340px;width:30vw;pointer-events:none}
+
+.como{padding:220px 48px 160px;display:grid;grid-template-columns:repeat(12,1fr);gap:24px;position:relative}
+.como h2{grid-column:1 / 4;font-weight:800;font-size:22px;line-height:1.2;position:sticky;top:32px;align-self:start}
+.como ol{grid-column:4 / 11;list-style:none;padding:0}
+.como li{font-size:44px;line-height:1.14;letter-spacing:-.02em;margin-bottom:72px}
+.como li b{font-weight:800;color:var(--azul)}
+.como .margen{grid-column:11 / 13;align-self:start;margin-top:180px;min-height:200px}
+
+@media (max-width:760px){
+  body{font-size:17px}
+  .cab{padding:18px 20px}
+  .cab img{height:24px}
+  .cab nav{display:none}
+  .portada{display:flex;flex-direction:column}
+  .mesa{order:-1;min-height:118vw;margin:0 0 0 20px}
+  .mesa .piezas{left:-20px;bottom:-40vw}
+  .mesa .piezas img{width:44vw}
+  .mesa .piezas img+img{margin-left:-8vw;margin-top:12vw}
+  .mesa .nota{display:none}
+  .portada .texto{padding:48vw 20px 32px}
+  .portada h1{font-size:15vw;margin-bottom:24px}
+  .portada .wa{width:100%;justify-content:center;min-height:56px}
+  .mesa .foto{padding:20px}
+  .puntos{position:static;display:block;width:86vw;margin:8px -20px 40px auto}
+  .como{display:block;padding:96px 20px}
+  .como h2{position:static;margin-bottom:32px}
+  .como li{font-size:27px;margin-bottom:44px}
+  .como .margen{margin:0 0 0 30%;min-height:150px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="cab">
+  <img src="../marca/lockup-negro.svg" alt="VIRA">
+  <nav aria-label="Principal"><a href="#trabajo">Trabajo</a><a href="#como">Cómo trabajamos</a><a href="#socios">Nosotros</a></nav>
+</div>
+
+<header class="portada">
+  <div class="texto">
+    <h1>Todo lo que ves en la calle antes estuvo arriba de una mesa.</h1>
+    <div>
+      <p>La nuestra es esta. Somos Nicolás y Román: armamos marcas, anuncios y webs para negocios chicos, y lo probamos impreso antes de mostrártelo.</p>
+      <a class="wa" href="https://wa.me/" data-wa>Escribinos por WhatsApp</a>
+    </div>
+  </div>
+  <div class="mesa">
+    <div class="falta foto"><b>FOTO REAL</b>La mesa de trabajo desde arriba, con luz de día de ventana: láminas impresas de los carruseles, un marcador destapado, la notebook a medio cerrar, cinta de papel. Sin caras. Horizontal 3:2, mínimo 2400 px de ancho. Va con halftone en azul y mandarina.</div>
+    <div class="piezas">
+      <img src="../img/es-para-vos.webp" alt="Lámina ¿Es para vos? impresa">
+      <img src="../img/abri-con-la-marca.webp" alt="Lámina Abrí con la marca lista impresa">
+    </div>
+    <div class="falta nota"><b>ESCANEO</b>Las dos láminas impresas, pegadas con cinta de papel y una anotación en marcador: “esta no, muy cargada”.</div>
+  </div>
+</header>
+
+<section class="como" id="como">
+  <h2>Cómo trabajamos</h2>
+  <ol>
+    <li><b>Primero charlamos.</b> Te mandamos unas preguntas cortas sobre tu negocio, tu gente y adónde querés llegar, y las contestás cuando puedas.</li>
+    <li><b>Después armamos tu marca y tu sitio</b> a partir de referencias reales. Te mostramos más de una opción y te decimos cuál nos parece mejor, pero elegís vos.</li>
+    <li><b>Salimos con anuncios</b> que se ven como tu marca, para que la gente que los ve después te reconozca en el local.</li>
+    <li><b>Y te mostramos los números</b> en simple: qué hicimos y qué pasó.</li>
+  </ol>
+  <img class="puntos" src="../marca/simbolo-puntos-azul.svg" alt="">
+  <div class="falta margen"><b>ESCANEO</b>Flecha de marcador al margen señalando “elegís vos”.</div>
+</section>
+
+<script>
+const CONTACTO = { whatsapp: '59899002974', email: 'vira.uruguay@gmail.com', instagram: 'vira.uruguay' };
+document.querySelectorAll('[data-wa]').forEach(a=>a.href='https://wa.me/'+CONTACTO.whatsapp+'?text='+encodeURIComponent('Hola VIRA, les escribo desde la web.'));
+</script>
+</body>
+</html>
